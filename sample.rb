@@ -19,6 +19,9 @@ options[:body] = {
 result = HTTParty.post("#{base_uri}/original_files?auth_token=#{auth_token}", options)
 original_doc = JSON.parse(result.body)
 
+#
+# response
+#
 # {
 #    "success":true,
 #    "src":"https://esign-development.s3-eu-west-1.amazonaws.com/uploads/original_file/file/000/092/439/original_file.pdf?X-Amz-Expires=600&X-Amz-Date=20171019T145929Z&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJLGLLV6CP7FXUFRA/20171019/eu-west-1/s3/aws4_request&X-Amz-SignedHeaders=host&X-Amz-Signature=1b41a74dd52efd3eac5132ab89779226ba21ef0032d148fbc3f2c34404d3b9bf",
@@ -87,6 +90,9 @@ options[:body] = {
 result = HTTParty.post("#{base_uri}/documents?auth_token=#{auth_token}", options)
 document_pack = JSON.parse(result.body)
 
+#
+# response
+#
 # {
 #    "title":"Example document one",
 #    "description":"",
@@ -297,5 +303,8 @@ end
 result = HTTParty.get("#{base_uri}/documents/#{document_pack["id"]}")
 document = JSON.parse(result)
 
+#
+# response
+#
 # document["status"]=>"Signed"
 # document["signers"][0]["status"] =>"Signed"
